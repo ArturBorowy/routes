@@ -4,7 +4,10 @@ import io.reactivex.rxkotlin.zipWith
 import pl.arturborowy.rnm.domain.stations.model.KeywordEntity
 import pl.arturborowy.rnm.domain.stations.model.StationEntity
 
-class StationsInteractor(private val stationsRemoteRepository: StationsRemoteRepository) {
+class StationsInteractor(
+    private val stationsRemoteRepository: StationsRemoteRepository,
+    private val distanceCounter: DistanceCounter
+) {
 
     fun getStationsAndKeywords() =
         stationsRemoteRepository.getStations()
@@ -13,7 +16,7 @@ class StationsInteractor(private val stationsRemoteRepository: StationsRemoteRep
                 sort(stations) to filterKeywordsWithoutMatchingStation(keywords, stations)
             }
 
-    private fun sort(stations: List<StationEntity>)=
+    private fun sort(stations: List<StationEntity>) =
         stations.sortedByDescending { it.hits }
 
     private fun filterKeywordsWithoutMatchingStation(
@@ -24,4 +27,12 @@ class StationsInteractor(private val stationsRemoteRepository: StationsRemoteRep
 
     private fun hasMatchingStation(keyword: KeywordEntity, stations: List<StationEntity>) =
         stations.any { station -> station.id == keyword.stationId }
+
+    fun getDistance(departure: StationEntity, destination: StationEntity) =
+        distanceCounter.betweenPointsOnSphere(
+            departure.latitude!!,
+            departure.longitude!!,
+            destination.latitude!!,
+            destination.longitude!!
+        )
 }
