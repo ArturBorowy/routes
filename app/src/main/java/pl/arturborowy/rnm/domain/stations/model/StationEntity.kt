@@ -12,4 +12,6 @@ data class StationEntity(
     val name: String,
     val nameSlug: String,
     val region: String
-)
+) {
+    override fun toString()= name
+}

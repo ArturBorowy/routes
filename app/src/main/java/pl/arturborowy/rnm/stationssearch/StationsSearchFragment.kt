@@ -21,12 +21,6 @@ class StationsSearchFragment(stationsSearchViewModel: StationsSearchViewModel) :
 
         viewModel.stations.addOnPropertyChangedCallback {
             if (it != null) {
-                adapter.stations = it
-            }
-        }
-
-        viewModel.keywords.addOnPropertyChangedCallback {
-            if (it != null) {
                 adapter.clear()
                 adapter.addAll(it)
             }

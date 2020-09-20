@@ -10,9 +10,7 @@ import pl.arturborowy.rnm.domain.stations.model.KeywordEntity
 import pl.arturborowy.rnm.domain.stations.model.StationEntity
 
 class StationsSearchAdapter(context: Context) :
-    ArrayAdapter<KeywordEntity>(context, android.R.layout.simple_dropdown_item_1line) {
-
-    var stations = listOf<StationEntity>()
+    ArrayAdapter<StationEntity>(context, android.R.layout.simple_dropdown_item_1line) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val inflater = LayoutInflater.from(parent.context)
@@ -23,7 +21,7 @@ class StationsSearchAdapter(context: Context) :
             false
         ) as TextView
 
-        val name = stations.firstOrNull { it.id == getItem(position)?.stationId }?.name
+        val name = getItem(position)?.name
         view.text = name
 
         return view
