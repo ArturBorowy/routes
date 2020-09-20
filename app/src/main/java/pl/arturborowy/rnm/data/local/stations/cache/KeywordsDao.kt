@@ -9,7 +9,7 @@ import pl.arturborowy.rnm.domain.stations.model.StationEntity
 @Dao
 interface KeywordsDao {
 
-    @Query("SELECT * FROM keywords")
+    @Query("SELECT * FROM keyworddb")
     fun getAll(): List<KeywordDb>
 
     @Insert

@@ -8,7 +8,7 @@ import pl.arturborowy.rnm.data.local.stations.cache.model.StationDb
 @Dao
 interface StationsDao {
 
-    @Query("SELECT * FROM station")
+    @Query("SELECT * FROM stationdb")
     fun getAll(): List<StationDb>
 
     @Insert
