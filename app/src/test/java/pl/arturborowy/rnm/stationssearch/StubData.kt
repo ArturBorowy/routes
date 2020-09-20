@@ -26,7 +26,7 @@ object StubData {
                 KEYWORD_WITH_MATCHING_STATION_STATION_ID
             )
 
-        val ALL = listOf(WITH_MATCHING_STATION_DTO, WITHOUT_MATCHING_STATION_DTO)
+        val ALL_DTO = listOf(WITH_MATCHING_STATION_DTO, WITHOUT_MATCHING_STATION_DTO)
     }
 
     object Stations {
@@ -45,6 +45,22 @@ object StubData {
             "Małopolskie"
         )
 
+        val ENTITY_2 = StationEntity(
+            KEYWORD_WITH_MATCHING_STATION_KEYWORD,
+            "Poland",
+            100,
+            null,
+            KEYWORD_WITH_MATCHING_STATION_STATION_ID,
+            1.0,
+            "Kraków",
+            1.0,
+            KEYWORD_WITH_MATCHING_STATION_KEYWORD,
+            "KRK",
+            "Małopolskie"
+        )
+
+        val ALL_ENTITIES = listOf(MATCHING_ENTITY, ENTITY_2)
+
         val MATCHING_DTO =
             StationDto(
                     KEYWORD_WITH_MATCHING_STATION_KEYWORD,
@@ -59,5 +75,22 @@ object StubData {
                     "KRK",
                     "Małopolskie"
                 )
+
+        val DTO_2 =
+            StationDto(
+                KEYWORD_WITH_MATCHING_STATION_KEYWORD,
+                "Poland",
+                100,
+                null,
+                KEYWORD_WITH_MATCHING_STATION_STATION_ID,
+                1.0,
+                "Kraków",
+                1.0,
+                KEYWORD_WITH_MATCHING_STATION_KEYWORD,
+                "KRK",
+                "Małopolskie"
+            )
+
+        val ALL_DTO = listOf(MATCHING_DTO, DTO_2)
     }
 }

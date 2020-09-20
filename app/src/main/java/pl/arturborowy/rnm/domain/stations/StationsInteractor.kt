@@ -10,8 +10,11 @@ class StationsInteractor(private val stationsRemoteRepository: StationsRemoteRep
         stationsRemoteRepository.getStations()
             .zipWith(stationsRemoteRepository.getKeywords())
             .map { (stations, keywords) ->
-                stations to filterKeywordsWithoutMatchingStation(keywords, stations)
+                sort(stations) to filterKeywordsWithoutMatchingStation(keywords, stations)
             }
+
+    private fun sort(stations: List<StationEntity>)=
+        stations.sortedByDescending { it.hits }
 
     private fun filterKeywordsWithoutMatchingStation(
         keyWords: List<KeywordEntity>,

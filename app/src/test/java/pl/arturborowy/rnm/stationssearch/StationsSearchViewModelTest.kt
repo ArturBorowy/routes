@@ -42,7 +42,7 @@ class StationsSearchViewModelTest : AutoCloseKoinTest() {
 
     @Test
     fun `onViewCreated sets only matching keywords with matching stations`() {
-        every { mockStationsService.getKeywords() } returns Single.just(StubData.Keyword.ALL)
+        every { mockStationsService.getKeywords() } returns Single.just(StubData.Keyword.ALL_DTO)
 
         every { mockStationsService.getStations() } returns
                 Single.just(listOf(StubData.Stations.MATCHING_DTO))
@@ -56,16 +56,15 @@ class StationsSearchViewModelTest : AutoCloseKoinTest() {
     }
 
     @Test
-    fun `onViewCreated sets stations`() {
+    fun `onViewCreated sets stations sorted by hits`() {
         every { mockStationsService.getKeywords() } returns Single.just(listOf())
 
-        every { mockStationsService.getStations() } returns
-                Single.just(listOf(StubData.Stations.MATCHING_DTO))
+        every { mockStationsService.getStations() } returns Single.just(StubData.Stations.ALL_DTO)
 
         stationsSearchViewModel.onViewCreated()
 
         Assert.assertEquals(
-            listOf(StubData.Stations.MATCHING_ENTITY),
+            StubData.Stations.ALL_ENTITIES.reversed(),
             stationsSearchViewModel.stations.get()
         )
     }
