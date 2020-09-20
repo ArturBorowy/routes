@@ -31,5 +31,12 @@ val viewModelModule = module {
 
     factory { LoadingScreenViewModel() }
 
-    single { StationsSearchViewModel() }
+    single {
+        StationsSearchViewModel(
+            get(),
+            get(),
+            get(named<RemoteFetchSchedulerProvider>()),
+            get()
+        )
+    }
 }
