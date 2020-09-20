@@ -4,8 +4,8 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import pl.arturborowy.rnm.base.date.YearMonthDayHourMinuteSecondMillisStringToDateConverter
 import pl.arturborowy.rnm.data.remote.characters.mapper.*
-import pl.arturborowy.rnm.domain.stations.mapper.KeywordDtoToEntityMapper
-import pl.arturborowy.rnm.domain.stations.mapper.StationDtoToEntityMapper
+import pl.arturborowy.rnm.data.remote.stations.mapper.KeywordDtoToEntityMapper
+import pl.arturborowy.rnm.data.remote.stations.mapper.StationDtoToEntityMapper
 
 val mapperModule = module {
     single {

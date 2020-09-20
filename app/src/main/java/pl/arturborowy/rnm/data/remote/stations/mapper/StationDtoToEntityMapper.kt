@@ -1,4 +1,4 @@
-package pl.arturborowy.rnm.domain.stations.mapper
+package pl.arturborowy.rnm.data.remote.stations.mapper
 
 import pl.arturborowy.rnm.data.remote.Mapper
 import pl.arturborowy.rnm.data.remote.stations.StationDto
