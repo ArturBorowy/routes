@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:hint="@string/stations_search_hint_departure"
+            android:imeOptions="actionNext"
             android:inputType="text"
             android:singleLine="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:hint="@string/stations_search_hint_destination"
+            android:imeOptions="actionDone"
             android:inputType="text"
             android:singleLine="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +49,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/departureSearch"
+            app:layout_constraintTop_toBottomOf="@id/destinationSearch"
             tools:text="123" />
 
         <include
