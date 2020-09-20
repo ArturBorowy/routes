@@ -2,6 +2,7 @@ package pl.arturborowy.rnm.data.remote
 
 import io.reactivex.Single
 import pl.arturborowy.rnm.data.remote.stations.StationDto
+import pl.arturborowy.rnm.data.remote.stations.keywords.KeywordDto
 import retrofit2.http.GET
 
 interface StationsService {
@@ -12,4 +13,7 @@ interface StationsService {
 
     @GET("main/stations")
     fun getStations(): Single<List<StationDto>>
+
+    @GET("main/station_keywords")
+    fun getKeywords(): Single<List<KeywordDto>>
 }
