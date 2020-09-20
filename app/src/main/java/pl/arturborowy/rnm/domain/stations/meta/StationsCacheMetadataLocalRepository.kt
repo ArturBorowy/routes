@@ -4,5 +4,5 @@ import java.util.*
 
 interface StationsCacheMetadataLocalRepository {
 
-    val cacheCreationTime: Date?
+    var cacheCreationTime: Date?
 }

@@ -10,9 +10,9 @@ class StationsCacheMetadataSpRepository(
     private val dateConverter: DateConverter
 ) : StationsCacheMetadataLocalRepository {
 
-    override var cacheCreationTime: Date
+    override var cacheCreationTime: Date?
         set(value) {
-            _cacheCreationTime == dateConverter.convert(value)
+            _cacheCreationTime == dateConverter.convert(value!!)
         }
         get() = dateConverter.convert(_cacheCreationTime!!)
 
