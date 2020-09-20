@@ -3,19 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rnm_naviagation"
-    app:startDestination="@id/characterList">
-
-    <action
-        android:id="@+id/action_characterList_to_characterDetails"
-        app:destination="@id/characterDetails" />
+    app:startDestination="@id/stationSearch">
 
     <fragment
-        android:id="@+id/characterList"
-        android:name="pl.arturborowy.rnm.character.list.CharacterListFragment"
-        tools:layout="@layout/fragment_character_list"/>
-
-    <fragment
-        android:id="@+id/characterDetails"
-        android:name="pl.arturborowy.rnm.character.details.CharacterDetailsFragment"
-        tools:layout="@layout/fragment_character_details" />
+        android:id="@+id/stationSearch"
+        android:name="pl.arturborowy.rnm.stationssearch.StationsSearchFragment"
+        tools:layout="@layout/fragment_stations_search"/>
 </navigation>
