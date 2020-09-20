@@ -16,13 +16,19 @@ class StationsSearchFragment(stationsSearchViewModel: StationsSearchViewModel) :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = StationsSearchAdapter(requireContext())
-        searchView.setAdapter(adapter)
+        val departureAdapter = StationsSearchAdapter(requireContext())
+        departureSearch.setAdapter(departureAdapter)
+
+        val destinationAdapter = StationsSearchAdapter(requireContext())
+        destinationSearch.setAdapter(destinationAdapter)
 
         viewModel.stations.addOnPropertyChangedCallback {
             if (it != null) {
-                adapter.clear()
-                adapter.addAll(it)
+                departureAdapter.clear()
+                departureAdapter.addAll(it)
+
+                destinationAdapter.clear()
+                destinationAdapter.addAll(it)
             }
         }
     }

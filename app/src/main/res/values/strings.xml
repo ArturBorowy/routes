@@ -3,4 +3,7 @@
 
     <string name="error_unknown">Something wrong happened.</string>
     <string name="error_internet_not_available">"Can't fetch data :(.\nCheck your internet connection."</string>
+
+    <string name="stations_search_hint_departure">Miejsce wyjazdu</string>
+    <string name="stations_search_hint_destination">Miejsce przyjazdu</string>
 </resources>

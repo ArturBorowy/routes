@@ -24,6 +24,8 @@ class StationsSearchViewModel(
     val stations = ObservableField<MutableList<StationEntity>>(mutableListOf())
     val keywords = ObservableField<MutableList<KeywordEntity>>(mutableListOf())
 
+    val routeLength = ObservableField("123")
+
     override fun onViewCreated() {
         super.onViewCreated()
         fetchStationsAndKeywords()
