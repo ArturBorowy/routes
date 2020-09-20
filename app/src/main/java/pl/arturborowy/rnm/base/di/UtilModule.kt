@@ -12,8 +12,6 @@ import pl.arturborowy.rnm.base.rx.RemoteFetchSchedulerProvider
 import pl.arturborowy.rnm.base.rx.SchedulerProvider
 import pl.arturborowy.rnm.base.ui.ToastInvoker
 import pl.arturborowy.rnm.base.ui.fragment.BaseFragmentFactory
-import pl.arturborowy.rnm.character.list.CharacterDiffCallback
-import pl.arturborowy.rnm.domain.characters.model.CharactersDataSourceFactory
 import java.util.*
 
 val utilModule = module {
@@ -38,8 +36,4 @@ val utilModule = module {
     single { ToastInvoker(get()) }
 
     single { ThrowableHandler(get()) }
-
-    single { CharacterDiffCallback() }
-
-    single { CharactersDataSourceFactory(get()) }
 }

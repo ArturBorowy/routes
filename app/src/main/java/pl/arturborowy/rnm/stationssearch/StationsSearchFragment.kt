@@ -7,9 +7,9 @@ import pl.arturborowy.rnm.R
 import pl.arturborowy.rnm.base.ui.addOnPropertyChangedCallback
 import pl.arturborowy.rnm.base.ui.fragment.BaseFragment
 
-class StationsSearchFragment(characterListViewModel: StationsSearchViewModel) :
+class StationsSearchFragment(stationsSearchViewModel: StationsSearchViewModel) :
     BaseFragment<StationsSearchViewModel>(
-        characterListViewModel,
+        stationsSearchViewModel,
         R.layout.fragment_stations_search
     ) {
 
