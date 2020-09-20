@@ -24,10 +24,12 @@ class StationsCacheInteractor(
     }
 
     private fun <ValueT> runIfCacheIsNotObsolete(runIf: Single<ValueT>): Single<ValueT> {
-        return if (isCacheOlderThanOneDay()) {
-            Single.error(CacheException())
-        } else {
-            runIf
+        return Single.create<ValueT> { emitter ->
+            if(isCacheOlderThanOneDay()) {
+                emitter.onError(CacheException())
+            } else {
+                emitter.onSuccess(runIf.blockingGet())
+            }
         }
     }
 

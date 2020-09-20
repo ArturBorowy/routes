@@ -12,9 +12,9 @@ class StationsCacheMetadataSpRepository(
 
     override var cacheCreationTime: Date?
         set(value) {
-            _cacheCreationTime == dateConverter.convert(value!!)
+            _cacheCreationTime = dateConverter.convert(value!!)
         }
         get() = dateConverter.convert(_cacheCreationTime!!)
 
-    private val _cacheCreationTime by sharedPreferencesRepository.stringPref()
+    private var _cacheCreationTime by sharedPreferencesRepository.stringPref()
 }
