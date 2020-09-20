@@ -4,5 +4,5 @@ import org.koin.dsl.module
 import pl.arturborowy.rnm.domain.stations.StationsInteractor
 
 val interactorModule = module {
-    single { StationsInteractor(get()) }
+    single { StationsInteractor(get(), get()) }
 }

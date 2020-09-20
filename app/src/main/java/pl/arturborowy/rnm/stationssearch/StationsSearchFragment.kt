@@ -22,6 +22,14 @@ class StationsSearchFragment(stationsSearchViewModel: StationsSearchViewModel) :
         val destinationAdapter = StationsSearchAdapter(requireContext())
         destinationSearch.setAdapter(destinationAdapter)
 
+        departureSearch.setOnItemClickListener { _, _, position, _ ->
+            viewModel.selectedDepartureStation.set(departureAdapter.getItem(position))
+        }
+
+        destinationSearch.setOnItemClickListener { _, _, position, _ ->
+            viewModel.selectedDestinationStation.set(destinationAdapter.getItem(position))
+        }
+
         viewModel.stations.addOnPropertyChangedCallback {
             if (it != null) {
                 departureAdapter.clear()

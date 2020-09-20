@@ -6,4 +6,5 @@
 
     <string name="stations_search_hint_departure">Miejsce wyjazdu</string>
     <string name="stations_search_hint_destination">Miejsce przyjazdu</string>
+    <string name="stations_search_label_route_length">%.2f km</string>
 </resources>
