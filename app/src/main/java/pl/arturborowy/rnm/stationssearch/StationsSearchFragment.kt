@@ -20,8 +20,16 @@ class StationsSearchFragment(characterListViewModel: StationsSearchViewModel) :
         searchView.setAdapter(adapter)
 
         viewModel.stations.addOnPropertyChangedCallback {
-            adapter.clear()
-            adapter.addAll(it!!)
+            if (it != null) {
+                adapter.stations = it
+            }
+        }
+
+        viewModel.keywords.addOnPropertyChangedCallback {
+            if (it != null) {
+                adapter.clear()
+                adapter.addAll(it)
+            }
         }
     }
 }
