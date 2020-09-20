@@ -12,7 +12,7 @@ data class StationDto(
     @SerializedName("ibnr")
     val ibnr: Int? = null,
     @SerializedName("id")
-    val id: Int,
+    val id: Long,
     @SerializedName("latitude")
     val latitude: Double? = null,
     @SerializedName("localised_name")
