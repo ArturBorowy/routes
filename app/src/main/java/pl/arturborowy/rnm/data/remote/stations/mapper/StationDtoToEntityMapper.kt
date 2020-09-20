@@ -8,16 +8,12 @@ class StationDtoToEntityMapper : Mapper<StationDto, StationEntity> {
 
     override fun map(from: StationDto) =
         StationEntity(
-            from.city,
             from.country,
             from.hits,
-            from.ibnr,
             from.id,
-            from.latitude,
-            from.localisedName,
-            from.longitude,
             from.name,
-            from.nameSlug,
-            from.region
+            from.localisedName,
+            from.latitude,
+            from.longitude
         )
 }
