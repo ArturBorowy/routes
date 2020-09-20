@@ -21,8 +21,11 @@ class StationsSearchAdapter(context: Context) :
             false
         ) as TextView
 
-        val name = getItem(position)?.name
-        view.text = name
+        val station = getItem(position)
+
+        if (station != null) {
+            view.text = station.toString()
+        }
 
         return view
     }

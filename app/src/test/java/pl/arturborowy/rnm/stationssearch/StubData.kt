@@ -33,30 +33,22 @@ object StubData {
 
         val MATCHING_ENTITY = StationEntity(
             KEYWORD_WITH_MATCHING_STATION_KEYWORD,
-            "Poland",
             1,
-            null,
             KEYWORD_WITH_MATCHING_STATION_STATION_ID,
-            1.0,
             "Kraków",
-            2.0,
             KEYWORD_WITH_MATCHING_STATION_KEYWORD,
-            "KRK",
-            "Małopolskie"
+            1.0,
+            2.0
         )
 
         val ENTITY_2 = StationEntity(
             KEYWORD_WITH_MATCHING_STATION_KEYWORD,
-            "Poland",
             100,
-            null,
             KEYWORD_WITH_MATCHING_STATION_STATION_ID,
-            1.0,
             "Kraków",
-            1.0,
             KEYWORD_WITH_MATCHING_STATION_KEYWORD,
-            "KRK",
-            "Małopolskie"
+            1.0,
+            1.0
         )
 
         val ALL_ENTITIES = listOf(MATCHING_ENTITY, ENTITY_2)

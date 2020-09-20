@@ -1,12 +1,12 @@
-package pl.arturborowy.rnm.data.remote.stations.mapper
+package pl.arturborowy.rnm.data.local.stations.cache.mapper
 
+import pl.arturborowy.rnm.data.local.stations.cache.model.StationDb
 import pl.arturborowy.rnm.data.remote.Mapper
-import pl.arturborowy.rnm.data.remote.stations.StationDto
 import pl.arturborowy.rnm.domain.stations.model.StationEntity
 
-class StationDtoToEntityMapper : Mapper<StationDto, StationEntity> {
+class StationDbToEntityMapper : Mapper<StationDb, StationEntity> {
 
-    override fun map(from: StationDto) =
+    override fun map(from: StationDb) =
         StationEntity(
             from.country,
             from.hits,

@@ -5,8 +5,8 @@ import androidx.databinding.ObservableField
 import io.reactivex.disposables.CompositeDisposable
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
-import pl.arturborowy.rnm.base.date.StringToDateConverter
-import pl.arturborowy.rnm.base.date.YearMonthDayHourMinuteSecondMillisStringToDateConverter
+import pl.arturborowy.rnm.base.date.DateConverter
+import pl.arturborowy.rnm.base.date.YearMonthDayHourMinuteSecondMillisDateConverter
 import pl.arturborowy.rnm.base.error.ThrowableHandler
 import pl.arturborowy.rnm.base.rx.RemoteFetchSchedulerProvider
 import pl.arturborowy.rnm.base.rx.SchedulerProvider
@@ -24,10 +24,10 @@ val utilModule = module {
         RemoteFetchSchedulerProvider()
     }
 
-    single<StringToDateConverter>(
-        named<YearMonthDayHourMinuteSecondMillisStringToDateConverter>()
+    single<DateConverter>(
+        named<YearMonthDayHourMinuteSecondMillisDateConverter>()
     ) {
-        YearMonthDayHourMinuteSecondMillisStringToDateConverter(Locale.US)
+        YearMonthDayHourMinuteSecondMillisDateConverter(Locale.US)
     }
 
     factory<MutableCollection<Pair<ObservableField<*>, Observable.OnPropertyChangedCallback>>> {
