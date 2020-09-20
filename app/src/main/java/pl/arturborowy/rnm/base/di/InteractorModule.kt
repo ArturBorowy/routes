@@ -5,9 +5,12 @@ import org.koin.dsl.module
 import pl.arturborowy.rnm.base.rx.RemoteFetchSchedulerProvider
 import pl.arturborowy.rnm.domain.characters.CharactersDataSource
 import pl.arturborowy.rnm.domain.characters.CharactersInteractor
+import pl.arturborowy.rnm.domain.stations.StationsInteractor
 
 val interactorModule = module {
     single { CharactersInteractor(get(), get()) }
 
     single { CharactersDataSource(get(), get(named<RemoteFetchSchedulerProvider>()), get(), get()) }
+
+    single { StationsInteractor(get()) }
 }
