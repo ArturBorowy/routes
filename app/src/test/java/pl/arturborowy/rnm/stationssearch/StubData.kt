@@ -6,9 +6,9 @@ import pl.arturborowy.rnm.domain.stations.model.KeywordEntity
 import pl.arturborowy.rnm.domain.stations.model.StationEntity
 
 object StubData {
-    const val KEYWORD_WITH_MATCHING_STATION_ID = 1
+    const val KEYWORD_WITH_MATCHING_STATION_ID = 1L
     const val KEYWORD_WITH_MATCHING_STATION_KEYWORD = "Karkow"
-    const val KEYWORD_WITH_MATCHING_STATION_STATION_ID = 1000
+    const val KEYWORD_WITH_MATCHING_STATION_STATION_ID = 1000L
 
     object Keyword {
         val WITHOUT_MATCHING_STATION_DTO = KeywordDto(0, "Warsaw", -1000)
@@ -39,7 +39,7 @@ object StubData {
             KEYWORD_WITH_MATCHING_STATION_STATION_ID,
             1.0,
             "Kraków",
-            1.0,
+            2.0,
             KEYWORD_WITH_MATCHING_STATION_KEYWORD,
             "KRK",
             "Małopolskie"

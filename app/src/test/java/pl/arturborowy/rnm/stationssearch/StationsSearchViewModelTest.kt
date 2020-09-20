@@ -68,4 +68,42 @@ class StationsSearchViewModelTest : AutoCloseKoinTest() {
             stationsSearchViewModel.stations.get()
         )
     }
+
+    @Test
+    fun `departureInput state change after onViewCreated sets EMPTY_ROUTE_LENGTH on routeLength`() {
+        every { mockStationsService.getKeywords() } returns Single.just(listOf())
+        every { mockStationsService.getStations() } returns Single.just(listOf())
+
+        stationsSearchViewModel.routeLength.set(100.0)
+
+        stationsSearchViewModel.onViewCreated()
+        stationsSearchViewModel.destinationInput.set("ANYTHING")
+
+        Assert.assertEquals(0.0, stationsSearchViewModel.routeLength.get())
+    }
+
+    @Test
+    fun `destinationInput state change after onViewCreated sets EMPTY_ROUTE_LENGTH on routeLength`() {
+        every { mockStationsService.getKeywords() } returns Single.just(listOf())
+        every { mockStationsService.getStations() } returns Single.just(listOf())
+
+        stationsSearchViewModel.routeLength.set(100.0)
+
+        stationsSearchViewModel.onViewCreated()
+        stationsSearchViewModel.departureInput.set("ANYTHING")
+
+        Assert.assertEquals(0.0, stationsSearchViewModel.routeLength.get())
+    }
+
+    @Test
+    fun `selectedDepartureStation and selectedDestinationStation state change after onViewCreated sets correct routeLength `() {
+        every { mockStationsService.getKeywords() } returns Single.just(listOf())
+        every { mockStationsService.getStations() } returns Single.just(listOf())
+
+        stationsSearchViewModel.onViewCreated()
+        stationsSearchViewModel.selectedDepartureStation.set(StubData.Stations.MATCHING_ENTITY)
+        stationsSearchViewModel.selectedDestinationStation.set(StubData.Stations.ENTITY_2)
+
+        Assert.assertEquals(111.20940183044317, stationsSearchViewModel.routeLength.get())
+    }
 }
