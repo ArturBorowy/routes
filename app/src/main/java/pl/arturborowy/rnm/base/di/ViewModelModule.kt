@@ -6,6 +6,7 @@ import pl.arturborowy.rnm.base.rx.RemoteFetchSchedulerProvider
 import pl.arturborowy.rnm.base.ui.view.LoadingScreenViewModel
 import pl.arturborowy.rnm.character.details.CharacterDetailsViewModel
 import pl.arturborowy.rnm.character.list.CharacterListViewModel
+import pl.arturborowy.rnm.stationssearch.StationsSearchViewModel
 
 val viewModelModule = module {
     single {
@@ -29,4 +30,6 @@ val viewModelModule = module {
     }
 
     factory { LoadingScreenViewModel() }
+
+    single { StationsSearchViewModel() }
 }

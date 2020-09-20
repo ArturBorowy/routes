@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rnm_naviagation"
-    app:startDestination="@id/characterList">
+    app:startDestination="@id/stationSearch">
 
     <action
         android:id="@+id/action_characterList_to_characterDetails"
@@ -18,4 +18,9 @@
         android:id="@+id/characterDetails"
         android:name="pl.arturborowy.rnm.character.details.CharacterDetailsFragment"
         tools:layout="@layout/fragment_character_details" />
+
+    <fragment
+        android:id="@+id/stationSearch"
+        android:name="pl.arturborowy.rnm.stationssearch.StationsSearchFragment"
+        tools:layout="@layout/fragment_stations_search"/>
 </navigation>
