@@ -8,5 +8,6 @@ val definitionModule =
         restModule,
         mapperModule,
         repositoryModule,
-        interactorModule
+        interactorModule,
+        localDataModule
     )
