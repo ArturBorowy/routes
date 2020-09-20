@@ -55,7 +55,7 @@ class StationsSearchViewModel(
                     this.keywords.set(keywords.toMutableList())
                     this.stations.set(stations.toMutableList())
                 },
-                onError = throwableHandler::handle
+                onError ={ throwableHandler.handle(it)}
             ).addToSubs()
     }
 

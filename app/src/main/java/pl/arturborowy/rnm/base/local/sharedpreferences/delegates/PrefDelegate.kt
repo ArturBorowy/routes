@@ -1,12 +1,8 @@
 package pl.arturborowy.rnm.base.local.sharedpreferences.delegates
 
-import kotlin.reflect.KProperty
+import kotlin.properties.ReadWriteProperty
 
-interface PrefDelegate<ValueT> {
+interface PrefDelegate<ValueT> : ReadWriteProperty<Any?, ValueT> {
 
     val prefKey: String?
-
-    operator fun getValue(thisRef: Any?, property: KProperty<*>): ValueT
-
-    operator fun setValue(thisRef: Any?, property: KProperty<*>, value: ValueT)
 }
